@@ -208,24 +208,88 @@ export default function Home() {
         </section>
 
         {/* CONTACTO */}
-        <section id="contact" className="space-y-6 border-t border-slate-800 pt-16">
-          <h2 className="text-3xl font-semibold">¿Hablamos?</h2>
+        {/* CONTACTO */}
+<section id="contact" className="space-y-6 border-t border-slate-800 pt-16">
+  <h2 className="text-3xl font-semibold">¿Hablamos?</h2>
 
-          <p className="text-slate-300 max-w-xl">
-            Si te interesa mejorar tus procesos, automatizar tareas o usar IA de forma práctica,
-            escribime. Prefiero conversaciones reales antes que formularios largos.
-          </p>
+  <p className="text-slate-300 max-w-xl text-sm sm:text-base">
+    Si te interesa mejorar procesos, automatizar tareas o usar IA y tecnología de forma
+    práctica, escribime por el canal que te quede más cómodo. Prefiero conversaciones
+    reales antes que formularios eternos.
+  </p>
 
-          <a
-            href="mailto:julianwaitzman@gmail.com"
-            className="px-6 py-3 bg-sky-500 text-black rounded-full font-semibold text-sm hover:bg-sky-400 transition"
-          >
-            Escribirme
-          </a>
-        </section>
+  {/* Botón principal de mail */}
+  <div className="flex flex-wrap gap-3 items-center">
+    <a
+      href="mailto:julianwaitzman@gmail.com"
+      className="px-6 py-3 bg-sky-500 text-black rounded-full font-semibold text-sm hover:bg-sky-400 transition"
+    >
+      Escribirme por mail
+    </a>
+    <span className="text-xs text-slate-500">
+      También podés usar cualquiera de estas opciones:
+    </span>
+  </div>
 
-      </div>
-    </main>
-  );
-}
-
+  {/* Lista de canales de contacto */}
+  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 pt-4 text-sm">
+    {[
+      {
+        name: "WhatsApp",
+        href: "https://wa.me/5491127320366",
+        handle: "+54 9 ...",
+        color: "#25D366",
+        label: "W",
+      },
+      {
+        name: "Instagram",
+        href: "https://www.instagram.com/juliwaitz",
+        handle: "@tuusuario",
+        color: "#E1306C",
+        label: "Ig",
+      },
+      {
+        name: "LinkedIn",
+        href: "www.linkedin.com/in/julián-waitzman-070b4a28", 
+        handle: "Perfil profesional",
+        color: "#0A66C2",
+        label: "in",
+      },
+      {
+        name: "Facebook",
+        href: "https://www.facebook.com/tuusuario",
+        handle: "Facebook",
+        color: "#1877F2",
+        label: "f",
+      },
+      {
+        name: "Email alternativo",
+        href: "mailto:julianwaitzman@gmail.com",
+        handle: "julianwaitzman@gmail.com",
+        color: "#38BDF8",
+        label: "@",
+      },
+    ].map((item) => (
+      <a
+        key={item.name}
+        href={item.href}
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-950/70 px-4 py-3 hover:border-sky-500/70 hover:bg-slate-900 transition"
+      >
+        <div
+          className="h-9 w-9 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md"
+          style={{ backgroundColor: item.color }}
+        >
+          {item.label}
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-slate-50 text-sm">
+            {item.name}
+          </span>
+          <span className="text-xs text-slate-400">{item.handle}</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

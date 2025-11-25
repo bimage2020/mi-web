@@ -50,52 +50,64 @@ export default function Home() {
       <div className="mx-auto max-w-7xl px-6 space-y-32 pb-32 pt-16">
 
         {/* HERO */}
-        <section className="text-center space-y-6 max-w-3xl mx-auto">
-          <motion.p
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="text-[11px] tracking-[0.35em] uppercase text-slate-400"
-          >
-            IA · CRYPTO · PRODUCTIVIDAD
-          </motion.p>
+      {/* HERO — Estilo MeetLara Adaptado */}
+<section className="relative flex flex-col items-center justify-center text-center py-32 px-6">
 
-          <motion.h1
-            initial="hidden" animate="visible" variants={fadeUp}
-            className="text-5xl md:text-6xl font-bold leading-tight"
-          >
-            Transformo procesos reales con{" "}
-            <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
-              IA aplicada
-            </span>{" "}
-            y soluciones prácticas.
-          </motion.h1>
+  {/* Glow de fondo estilo premium */}
+  <div className="absolute inset-0 -z-10 flex items-center justify-center">
+    <div className="h-[400px] w-[400px] rounded-full bg-sky-500/20 blur-[120px] opacity-40"></div>
+  </div>
 
-          <motion.p
-            initial="hidden" animate="visible" variants={fadeUp}
-            className="text-base text-slate-300 max-w-xl mx-auto"
-          >
-            Soy Julián Waitzman. Vengo del mundo del servicio técnico, logística,
-            equipos y procesos. Hoy combino todo eso con IA, automatización y análisis
-            crypto para ayudarte a mejorar tiempos, reducir errores y tomar decisiones más claras.
-          </motion.p>
+  {/* Etiqueta superior */}
+  <p className="uppercase tracking-[0.35em] text-slate-400 text-[10px] mb-6">
+    IA · CRYPTO · ESTRATEGIA · AUTOMATIZACIÓN
+  </p>
 
-          <motion.div
-            initial="hidden" animate="visible" variants={fadeUp}
-            className="flex justify-center gap-4 pt-4"
-          >
-            <a
-              href="#contact"
-              className="px-6 py-3 bg-sky-500 font-semibold text-black rounded-full text-sm shadow-md hover:bg-sky-400 transition"
-            >
-              Empezar ahora
-            </a>
-            <a
-              href="#method"
-              className="px-6 py-3 border border-slate-600 text-slate-100 rounded-full text-sm hover:border-slate-300 transition"
-            >
-              Ver cómo funciona
-            </a>
-          </motion.div>
-        </section>
+  {/* Título grande */}
+  <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight max-w-4xl">
+    Potencio personas y negocios con{" "}
+    <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
+      tecnología, datos e inteligencia artificial.
+    </span>
+  </h1>
+
+  {/* Subtítulo */}
+  <p className="max-w-xl text-slate-300 text-sm sm:text-base mt-6">
+    Soy Julian Waitzman. Combino experiencia en servicio técnico, logística y 
+    operaciones con herramientas tech modernas: IA, data, dashboards y automatización 
+    aplicada al día a día. Tomo ideas y las vuelvo soluciones reales.
+  </p>
+
+  {/* Botones */}
+  <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+    <a
+      href="#services"
+      className="rounded-full bg-sky-500 px-6 py-2 text-xs font-semibold text-black hover:bg-sky-400 transition"
+    >
+      Ver servicios
+    </a>
+
+    <a
+      href="#contact"
+      className="rounded-full border border-slate-600 px-6 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300 transition"
+    >
+      Charlar un proyecto
+    </a>
+  </div>
+
+  {/* Mini indicadores */}
+  <div className="flex gap-6 mt-10 text-xs text-slate-400">
+    <div className="text-center">
+      <p className="text-slate-200 text-sm font-semibold">+10 años</p>
+      <p>operaciones & equipos</p>
+    </div>
+    <div className="text-center">
+      <p className="text-slate-200 text-sm font-semibold">IA primero</p>
+      <p>data y eficiencia real</p>
+    </div>
+  </div>
+</section>
+
 
         {/* MÉTODO – CÓMO FUNCIONA */}
         <section id="method" className="space-y-10">

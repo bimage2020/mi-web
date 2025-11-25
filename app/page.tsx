@@ -1,5 +1,5 @@
 "use client";"use client";
-
+import { LogoTBM } from "./components/LogoTBM";
 import { motion } from "framer-motion";
 
 const fadeUp = {
@@ -459,7 +459,32 @@ export default function Home() {
         </div>
       </a>
 
-      {/* CONTENEDOR PRINCIPAL */}
+      {/* <header className="sticky top-0 z-20 border-b border-white/10 bg-black/40 backdrop-blur-xl">
+  <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+    {/* LOGO TBM ANIMADO */}
+    <LogoTBM showText />
+
+    {/* NAV DESKTOP */}
+    <nav className="hidden sm:flex gap-6 text-xs text-slate-300">
+      <a href="/about" className="hover:text-sky-400 transition">
+        Sobre mí
+      </a>
+      <a href="#method" className="hover:text-sky-400 transition">
+        Cómo funciona
+      </a>
+      <a href="#benefits" className="hover:text-sky-400 transition">
+        Beneficios
+      </a>
+      <a href="#integrations" className="hover:text-sky-400 transition">
+        Integraciones
+      </a>
+      <a href="#contact" className="hover:text-sky-400 transition">
+        Contacto
+      </a>
+    </nav>
+  </div>
+</header>
+CONTENEDOR PRINCIPAL */}
       <div className="mx-auto max-w-7xl px-6 space-y-32 pb-24 pt-16">
         {/* HERO – animación de sección entera */}
         <motion.section

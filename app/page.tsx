@@ -1,4 +1,297 @@
-"use client";
+"use client";"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const sectionVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+export default function AboutPage() {
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-[#010409] via-[#000] to-[#010409] text-slate-50">
+      {/* BACKGROUND GLOWS */}
+      <div className="fixed inset-0 pointer-events-none -z-10">
+        <div className="absolute -top-40 right-0 w-96 h-96 bg-sky-500/20 blur-[140px]" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/20 blur-[140px]" />
+      </div>
+
+      <div className="mx-auto max-w-5xl px-6 py-20 space-y-20">
+        {/* BREADCRUMB / HEADER */}
+        <motion.section
+          variants={sectionVariant}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.6 }}
+          className="space-y-6"
+        >
+          <div className="text-xs text-slate-400">
+            <a href="/" className="hover:text-sky-400 transition">
+              Home
+            </a>{" "}
+            <span className="mx-1">/</span>
+            <span className="text-slate-300">Sobre mí</span>
+          </div>
+
+          <p className="uppercase tracking-[0.35em] text-slate-400 text-[10px]">
+            SOBRE MÍ · JULIAN WAITZMAN
+          </p>
+
+          <h1 className="text-4xl sm:text-5xl font-semibold leading-tight">
+            Hola, soy{" "}
+            <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
+              Julian Waitzman
+            </span>
+            . Combino tecnología, IA y operaciones para que las cosas
+            funcionen en la vida real.
+          </h1>
+
+          <p className="text-slate-300 text-sm sm:text-base max-w-3xl">
+            Trabajo hace más de 12 años en tecnología, servicio técnico,
+            logística y proyectos digitales. Hoy mi foco es ayudar a personas y
+            negocios a usar IA, data y automatización de forma práctica, sin
+            humo y con criterio: menos complicación, más cosas que realmente
+            funcionan.
+          </p>
+        </motion.section>
+
+        {/* QUIÉN SOY / QUÉ HAGO HOY */}
+        <motion.section
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-start"
+        >
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">Quién soy</h2>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              Vengo del mundo de las operaciones: servicio técnico, logística,
+              atención, equipos y procesos que no pueden frenar. Eso me dio algo
+              clave hoy: entender cómo se vive la tecnología en el día a día,
+              cuando los clientes llaman, se rompen cosas, hay tickets,
+              demoras y decisiones que tomar rápido.
+            </p>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              Sobre esa base sumo IA, herramientas online, dashboards y
+              automatización. Me interesa bajar todo eso a tierra para solucionar
+              problemas concretos: menos planillas eternas y reportes que nadie
+              mira, más sistemas simples que te ayudan a decidir y avanzar.
+            </p>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              Me gusta trabajar cerca, con confianza, explicando las cosas en
+              lenguaje simple. Prefiero una charla honesta y un plan de 30 días
+              que una promesa vacía de “transformación digital”.
+            </p>
+          </div>
+
+          {/* BLOQUE LATERAL / SNAPSHOT */}
+          <div className="rounded-3xl border border-white/5 bg-slate-900/70 p-5 shadow-[0_0_60px_rgba(56,189,248,0.25)] space-y-4">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400">
+              Snapshot
+            </p>
+
+            <div className="space-y-3 text-xs text-slate-300">
+              <div className="flex justify-between items-center">
+                <span className="text-slate-200 font-semibold">
+                  +12 años en tech & operaciones
+                </span>
+                <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] text-emerald-300">
+                  Experiencia real
+                </span>
+              </div>
+
+              <div className="h-1.5 w-full rounded-full bg-slate-800">
+                <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300" />
+              </div>
+
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Servicio técnico, logística y coordinación de equipos.</li>
+                <li>Consultoría tech, IA aplicada y automatización.</li>
+                <li>Dashboards, análisis cripto y procesos medibles.</li>
+                <li>Eventos y experiencias con tecnología con propósito.</li>
+              </ul>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* TIMELINE EXPERIENCIA */}
+        <motion.section
+          variants={{ ...sectionVariant, ...stagger }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-8"
+        >
+          <h2 className="text-2xl font-semibold">Recorrido profesional</h2>
+          <p className="text-sm text-slate-300 max-w-3xl">
+            Pasé por empresas y proyectos muy distintos, pero siempre con la
+            misma idea: mejorar cómo se trabaja, cómo se atiende y cómo se
+            toman decisiones.
+          </p>
+
+          <div className="space-y-4 border-l border-slate-700 pl-4">
+            {[
+              {
+                year: "Actual",
+                role: "Consultoría en tecnología, IA & procesos",
+                desc: "Acompaño a personas y negocios a usar IA, automatización y data para ordenar procesos, reducir fricción y crear soluciones simples.",
+              },
+              {
+                year: "Años previos",
+                role: "Servicio técnico, logística & operaciones",
+                desc: "Roles donde el foco fue coordinar equipos, mejorar tiempos de respuesta, ordenar la información y construir procesos más claros.",
+              },
+              {
+                year: "Antes",
+                role: "Proyectos creativos, eventos y estrategia",
+                desc: "Participación en experiencias presenciales, acciones BTL y proyectos donde la tecnología se mezcla con la creatividad y la conexión humana.",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.year}
+                variants={fadeUp}
+                className="relative pl-4"
+              >
+                <div className="absolute -left-2 top-1 h-3 w-3 rounded-full bg-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.8)]" />
+                <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">
+                  {item.year}
+                </p>
+                <p className="text-sm font-semibold text-slate-50">
+                  {item.role}
+                </p>
+                <p className="text-xs text-slate-300 mt-1">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* SKILLS / FOCOS */}
+        <motion.section
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-8"
+        >
+          <h2 className="text-2xl font-semibold">En qué puedo aportar más hoy</h2>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "IA & automatización",
+                text: "Detectar tareas repetitivas y flujos rotos, y reemplazarlos por sistemas simples apoyados en IA.",
+              },
+              {
+                title: "Crypto & data",
+                text: "Dashboards, seguimiento de proyectos y análisis más ordenado del riesgo y las oportunidades.",
+              },
+              {
+                title: "Operaciones & experiencia",
+                text: "Cruzar tecnología con servicio técnico, logística, eventos y atención al cliente.",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                variants={fadeUp}
+                className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 hover:border-sky-500/70 hover:bg-slate-900 transition"
+              >
+                <h3 className="text-sm font-semibold text-slate-50">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-xs text-slate-300 leading-relaxed">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* LADO HUMANO */}
+        <motion.section
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-6"
+        >
+          <h2 className="text-2xl font-semibold">Un poco más personal</h2>
+          <p className="text-sm text-slate-300 leading-relaxed max-w-3xl">
+            Soy de moverme, de probar cosas nuevas y de no quedarme quieto.
+            Me interesan la tecnología, la naturaleza, la cocina, los proyectos
+            con propósito y las conversaciones honestas. Me gusta acompañar
+            procesos de cambio, bajar ansiedad con claridad y ayudar a que las
+            personas se sientan un poco menos solas frente a lo digital.
+          </p>
+          <p className="text-sm text-slate-300 leading-relaxed max-w-3xl">
+            Si algo de todo esto te resuena, probablemente tengamos algo para
+            construir juntos: una automatización, una estrategia, un tablero,
+            un evento o simplemente una buena charla para ordenar ideas.
+          </p>
+        </motion.section>
+
+        {/* CTA FINAL */}
+        <motion.section
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="border border-sky-500/30 rounded-3xl bg-slate-900/70 p-6 sm:p-8 space-y-4"
+        >
+          <h2 className="text-xl font-semibold">
+            ¿Te gustaría trabajar conmigo?
+          </h2>
+          <p className="text-sm text-slate-300 max-w-2xl">
+            Podemos arrancar con algo simple: una conversación corta donde me
+            contás tu contexto y vemos si tiene sentido hacer algo juntos. Sin
+            compromiso, sin vueltas.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="mailto:julianwaitzman@gmail.com"
+              className="px-6 py-2 rounded-full bg-sky-500 text-black text-sm font-semibold hover:bg-sky-400 transition"
+            >
+              Escribirme un mail
+            </a>
+            <a
+              href="https://wa.me/5491127320366"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 rounded-full border border-slate-600 text-sm font-semibold text-slate-100 hover:border-slate-300 transition"
+            >
+              Charlar por WhatsApp
+            </a>
+            <a
+              href="/#contact"
+              className="px-6 py-2 rounded-full border border-slate-700 text-xs text-slate-300 hover:border-sky-400 transition"
+            >
+              Ver sección de contacto completa
+            </a>
+          </div>
+        </motion.section>
+      </div>
+    </main>
+  );
+}
+
 
 import { useState } from "react";
 import { motion } from "framer-motion";
